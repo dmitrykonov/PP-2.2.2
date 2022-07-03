@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class CarDao {
     private List<Car> cars;
 
-    public List<Car> getCars(String count) {
+    public List<Car> getCars(Integer count) {
         cars = new ArrayList<>();
         cars.add(new Car("VAZ", 1980, 1));
         cars.add(new Car("Ford", 1998, 2));
@@ -22,9 +22,6 @@ public class CarDao {
         if (count == null) {
             return cars;
         }
-        Integer carCount = Integer.parseInt(count);
-        if (carCount >=5) {
-            return cars;
-        } return cars = cars.stream().limit(carCount).collect(Collectors.toList());
+        return cars = cars.stream().limit(count).collect(Collectors.toList());
     }
 }

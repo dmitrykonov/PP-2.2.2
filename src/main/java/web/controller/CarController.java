@@ -20,7 +20,8 @@ public class CarController {
     }
 
     @GetMapping(value = "/cars")
-    public String getCars(@RequestParam(value = "count", required = false) String count, ModelMap model) {
+    public String getCars(@RequestParam(value = "count", required = false) Integer count, ModelMap model) {
+
         model.addAttribute("cars", carDao.getCars(count));
         return "cars";
     }
