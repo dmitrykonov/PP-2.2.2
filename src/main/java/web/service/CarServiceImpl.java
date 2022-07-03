@@ -1,5 +1,6 @@
 package web.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import web.dao.CarDao;
 import web.models.Car;
@@ -7,11 +8,12 @@ import web.models.Car;
 import java.util.List;
 
 @Service
-public class CarServiceImp implements CarService {
+public class CarServiceImpl implements CarService {
 
-    CarDao carDao;
+    private CarDao carDao;
 
-    public CarServiceImp(CarDao carDao) {
+    @Autowired
+    public CarServiceImpl(CarDao carDao) {
         this.carDao = carDao;
     }
 
